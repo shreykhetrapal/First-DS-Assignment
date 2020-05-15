@@ -29,17 +29,19 @@ complete <- function(directory,id){
   
   dat3 <- data.frame() # empty dataframe to store computed values
   
-  casesComplete <- complete.cases(dat2)
+  casesComplete <- complete.cases(dat2) # Logical vector of rows having complete values
   
   completeData <- dat2[casesComplete,] #Note the ',' after [casesComplete, ] it specifies coplete rows all columns
   
   
   for (j in id){
     
-    counts <- sum(completeData$ID==j) #
-    dat3 <- rbind(dat3,c(j,counts)) #
+    counts <- sum(completeData$ID==j) # If completeData$ID == j :: Will generate a vector of length of complete data with TRUE values only for the correct 'j'
+    # Sum function calculates all the true values
+    dat3 <- rbind(dat3,c(j,counts)) # this adds rows to the existing dataframe
   }
   
+  #naming the columns as per the requirement
   colnames(dat3)<-c('id','nobs')
   dat3
   
