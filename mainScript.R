@@ -29,6 +29,7 @@ complete <- function(directory,id){
   dat3 <- matrix(c(0,0),nrow = 1,ncol = 2)
   dat3 <- data.frame(dat3)
   colnames(dat3) <- c('id','nobs') #changing the names of the columns
+  dat3 <- dat[-1,] # delete the first extra row with values of 0,0 created by the matrix
   
   
 }
