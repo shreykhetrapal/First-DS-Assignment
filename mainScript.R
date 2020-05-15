@@ -11,5 +11,6 @@ pollutantmean <- function(directory, pollutant, id=1:332){
     dat <- rbind(dat,read.csv(file_names[i])) 
   }
   
+  mean(dat[['nitrate']],na.rm = TRUE)
   
 }
