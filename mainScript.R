@@ -16,5 +16,19 @@ pollutantmean <- function(directory, pollutant, id=1:332){
 }
 
 complete <- function(directory,id){
+  file_names2 <- list.files(directory,full.names = TRUE)
+  
+  dat2 <- data.frame()
+  
+  for (i in id){
+  dat2 <- rbind(dat2,read.csv(file_names2[i])) 
+  }
+  
+  #creating a 3rd dataframe
+  
+  dat3 <- matrix(c(0,0),nrow = 1,ncol = 2)
+  dat3 <- data.frame(dat3)
+  colnames(dat3) <- c('id','nobs') #changing the names of the columns
+  
   
 }
