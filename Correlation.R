@@ -20,6 +20,21 @@ corr <- function(directory,threshold=0){
   
   newDataID <- dat5[dat5$total>threshold, ] #contains IDs of rows with threshold value greater than required
   
+  finaldata <- data.frame()
+  finalvector <- data.frame()
   
+  for (k in 1:nrow(newDataID)){
+    
+    a <- newDataID$id[k]==completeData2$ID
+    
+    finaldata<-rbind(finaldata,completeData2[a,c(2,3)])
+    
+    corelationvalue <- cor(finaldata$sulfate,finaldata$nitrate)
+    
+    finalvector <- rbind(finalvector,corelationvalue)
+  }
+   
+  
+  finalvector
   
 }
