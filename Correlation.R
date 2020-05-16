@@ -17,7 +17,9 @@ corr <- function(directory,threshold=0){
   }
   
   colnames(dat5) <- c('id','total')
+  
   newDataID <- dat5[dat5$total>threshold, ] #contains IDs of rows with threshold value greater than required
+  
   
   
 }
