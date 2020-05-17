@@ -1,3 +1,4 @@
+# calculates the mean of a pollutant (sulfate or nitrate) across a specified list of monitors.
 pollutantmean <- function(directory, pollutant, id=1:332){
   
   file_names <- list.files(directory,full.names = TRUE) 
@@ -15,6 +16,7 @@ pollutantmean <- function(directory, pollutant, id=1:332){
   
 }
 
+# reads a directory full of files and reports the number of completely observed cases in each data file. 
 complete <- function(directory,id){
   file_names2 <- list.files(directory,full.names = TRUE)
   
